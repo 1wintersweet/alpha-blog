@@ -1,7 +1,17 @@
 <h1> create a new article</h1>
 
-<!-- use rails  form for helpers-->
+<!-- block for display validation messages -->
+<% if @article.errors.any? %>
+<h2>The following errors prevented the article from getting created... please re-enter.</h2>
+<ul>
+  <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
 
+<% end %>
+
+<!-- use rails  form for helpers-->
 <%= form_for @article do |f| %>
 
 <p>
