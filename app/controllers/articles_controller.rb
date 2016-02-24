@@ -1,5 +1,10 @@
 class ArticlesController < ApplicationController
   
+  def index
+    # get all articles
+    @articles = Article.all
+  end
+  
   def new
     @article = Article.new
   end
@@ -25,10 +30,23 @@ class ArticlesController < ApplicationController
   end
   
   def show # need to know the id so the object is the article created
-  
     @article = Article.find(params[:id])
-    
   end 
+  
+  def edit # bring up the form to display an existing article
+    @article = Article.find(params[:id])
+  end 
+  
+  def update #similar to save operation above
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      flash[:notice] = "article is saved successfully"
+      redirect_to article_path(@article)
+    else
+      render 'edit'
+    end
+    
+  end
   
   private
     def article_params

@@ -1,8 +1,8 @@
-<h1> create a new article</h1>
+<h1> Editing an existing article </h1>
 
 <!-- block for display validation messages -->
 <% if @article.errors.any? %>
-<h2>The following errors prevented the article from getting created... please re-enter.</h2>
+<h2>The following errors prevented the article from getting saved... please re-enter.</h2>
 <ul>
   <% @article.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
