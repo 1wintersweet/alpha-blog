@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
     if @article.save
       # do something
       # where to display - views are wrapped by application.html.erb -> all message will be there. 
-      flash[:notice] = "article is saved successfully"
+      flash[:success] = "Article is saved successfully"
       redirect_to article_path(@article)
     else
       # if validation has not passed, re-render the new form
@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
   
   def update #similar to save operation above    @article = Article.find(params[:id])
     if @article.update(article_params)
-      flash[:notice] = "article is saved successfully"
+      flash[:success] = "Article is updated successfully"
       redirect_to article_path(@article)
     else
       render 'edit'
@@ -49,7 +49,7 @@ class ArticlesController < ApplicationController
   
   def destroy
     @article.destroy
-    flash[:notice] = "Article was successfully deleted"
+    flash[:danger] = "Article was successfully deleted"
     redirect_to articles_path
   end
   

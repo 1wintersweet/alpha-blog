@@ -1,14 +1,6 @@
 
+<%= render 'shared/errors', obj: @article %>
 
-<!-- block for display validation messages -->
-<% if @article.errors.any? %>
-<h2>The following errors prevented the article from getting created... please re-enter.</h2>
-<ul>
-  <% @article.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-</ul>
-<% end %>
 <div class='row'>
   <div class='col-xs-12'>
     <!-- use rails  form for helpers-->
