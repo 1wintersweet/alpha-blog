@@ -13,9 +13,11 @@ class ArticlesController < ApplicationController
   end
   
   def create
+    debugger
     # render plain
     # render plain: params[:article].inspect
     @article = Article.new(article_params)
+    @article.user = User.last
    # @article.save
     #redirect after the saving
   #  redirect_to article_path(@article)
