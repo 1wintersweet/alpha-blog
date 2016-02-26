@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -31,6 +32,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+
 
 group :development, :test do
   
