@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   
+  # don't allow deleting category
+  resources :categories, except: [:destroy]
+  
   
 
   # Example of regular route:
