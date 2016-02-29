@@ -8,3 +8,8 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+# simulate a sign in action before test as part of the set up so weo can get to the session. 
+def sign_in_as(user, password)
+  post login_path, session: {email: user.email, password: password}
+end
