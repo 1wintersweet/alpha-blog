@@ -15,7 +15,7 @@
           </div>
         </div>
         <!-- only if the user is logged in and the author of the article the user is allowed to perform the following actions -->
-        <% if logged_in? && article.user == current_user %>
+        <% if logged_in? && (article.user == current_user  || current_user.admin?) %>
             <div class="article-action">
             <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-xs btn-primary" %>
             <%= link_to "Delete this article", article_path(article), method: :delete, 

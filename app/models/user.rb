@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :articles
+  has_many :articles, dependent: :destroy
   #convert to email to lower case
   before_save {self.email = email.downcase }
   # create validation rules
