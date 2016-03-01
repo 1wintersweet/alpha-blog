@@ -14,6 +14,10 @@
               </small>
           </div>
         </div>
+        
+        <% if article.categories.any? %>
+          <p>Categories: <%= render article.categories %></p>
+        <% end %>
         <!-- only if the user is logged in and the author of the article the user is allowed to perform the following actions -->
         <% if logged_in? && (article.user == current_user  || current_user.admin?) %>
             <div class="article-action">
